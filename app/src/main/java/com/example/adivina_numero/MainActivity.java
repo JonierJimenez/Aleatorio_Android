@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText intentos, numeroIngresado;
     Button iniciar, validar;
     RadioButton cinco,siete,diez;
-    TextView RegistrodeNumero;
+    TextView RegistrodeNumero,Respuesta;
 
     Random random;
     int Nintento=0;
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         RegistrodeNumero =findViewById(R.id.txtRegistrodeNumero);
+        Respuesta = findViewById(R.id.txtRespuesta);
 
         intentos= findViewById(R.id.edtMostrar);
         numeroIngresado =findViewById(R.id.edtNumero);
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
 
             case R.id.btnInicio:
+                Respuesta.setText("");
                 if(Bandera){
                     desactivarRadioBoton();
                     RegistrodeNumero.setText("");
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     iniciar.setEnabled(false);
                     validar.setEnabled(true);
                     r=Aleatorio();
-                    Toast.makeText(this, "El numero es:"+r, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "El numero es:"+r, Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(this, "Seleccione el numero de intentos", Toast.LENGTH_SHORT).show();
                 }
@@ -93,11 +95,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if(Bandera){
                                 int numero = Integer.parseInt(c1);
                                 if(numero>r){
-                                    Toast.makeText(getApplicationContext(),"Numero es mayor al deseado",Toast.LENGTH_LONG).show();
+
                                     RegistrodeNumero.setText("El numero es < que "+c1);
                                 }
                                 else if (numero<r){
-                                    Toast.makeText(this, "Numero es menor al deseado", Toast.LENGTH_SHORT).show();
+
                                     RegistrodeNumero.setText("El numero es > que "+c1);
                                 }
                                 else{
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }else{
                     Toast.makeText(this, "Numero de intentos agotados", Toast.LENGTH_SHORT).show();
+                    Respuesta.setText("El numero era: "+r);
                     restablecer();
                 }
 
