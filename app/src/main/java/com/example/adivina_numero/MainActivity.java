@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(Bandera){
                     desactivarRadioBoton();
                     RegistrodeNumero.setText("");
-                    Toast.makeText(this, "Puede ingresar un numero", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "PUEDE INGRESAR UN NUMERO", Toast.LENGTH_SHORT).show();
                     intentos.setText("1");
                     numeroIngresado.setEnabled(true);
                     numeroIngresado.setFocusable(true);
@@ -79,9 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     iniciar.setEnabled(false);
                     validar.setEnabled(true);
                     r=Aleatorio();
-                    //Toast.makeText(this, "El numero es:"+r, Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(this, "Seleccione el numero de intentos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "SELECCIONES EL NUMERO DE INTENTOS", Toast.LENGTH_SHORT).show();
                 }
 
                 break;
