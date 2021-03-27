@@ -14,6 +14,7 @@
         android:text="ADIVINA EL NUMERO"
         android:textColor="#000000"
         android:textSize="36sp"
+        android:typeface="serif"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -35,16 +36,17 @@
 
     <EditText
         android:id="@+id/edtNumero"
-        android:layout_width="157dp"
-        android:layout_height="44dp"
+        android:layout_width="245dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="124dp"
         android:ems="10"
-        android:hint="Ingrese Numero"
-        android:inputType="textPersonName"
+        android:hint="Ingrese num de 0 a100"
+        android:inputType="number|textPersonName"
         android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColorHint="#57000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtMostrar" />
 
     <RadioGroup
@@ -55,6 +57,12 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNumero">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Intentos" />
 
         <RadioButton
             android:id="@+id/rd5"
@@ -92,7 +100,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
-        app:rippleColor="#000000" />
+        app:rippleColor="#000000"
+        android:background="@drawable/borde_redondo"/>
 
     <Button
         android:id="@+id/btnValidar"
@@ -104,7 +113,8 @@
         android:text="Validar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnInicio" />
+        app:layout_constraintTop_toBottomOf="@+id/btnInicio"
+        android:background="@drawable/borde_redondo"/>
 
     <TextView
         android:id="@+id/txtRegistrodeNumero"
